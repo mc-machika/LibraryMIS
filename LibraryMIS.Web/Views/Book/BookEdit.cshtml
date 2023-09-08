@@ -1,0 +1,97 @@
+﻿@using LibraryMIS.FrontEnd.Web.Models;
+@model BookDto
+<form asp-action="BookCreate" class="row p-3 mt-3 g-3 border">
+    <h1 class="text-white text-center">Add Book</h1>
+    <input asp-for="Id" hidden />
+    <hr />
+    <div class="col-md-6">
+        <label class="form-label">Title</label>
+        <input asp-for="Title" type="text" class="form-control">
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">ISBN</label>
+        <input asp-for="ISBN" type="text" class="form-control">
+        <span asp-validation-for="ISBN" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Authors</label>
+        <input asp-for="Authors" type="text" class="form-control">
+        <span asp-validation-for="Authors" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Publisher</label>
+        <input asp-for="Publisher" type="text" class="form-control">
+        <span asp-validation-for="Publisher" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Publication Datele</label>
+        <input asp-for="PublicationDate" type="date" class="form-control">
+        <span asp-validation-for="PublicationDate" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Genre</label>
+        <input asp-for="Genre" type="text" class="form-control">
+        <span asp-validation-for="Genre" class="text-danger"></span>
+    </div>
+    <div class="col-md-12">
+        <label class="form-label">Synopsis</label>
+        <textarea asp-for="Synopsis" class="form-control">
+
+            </textarea>
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Page Count</label>
+        <input asp-for="PageCount" type="number" class="form-control">
+        <span asp-validation-for="PageCount" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Language</label>
+        <input asp-for="Language" type="text" class="form-control">
+        <span asp-validation-for="Language" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Shelf Location</label>
+        <input asp-for="ShelfLocation" type="text" class="form-control">
+        <span asp-validation-for="ShelfLocation" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Condition</label>
+        <input asp-for="Condition" type="text" class="form-control">
+        <span asp-validation-for="Condition" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Acquisition Method</label>
+        <select asp-for="AcquisitionMethod" class="form-select" asp-items="@ViewBag.AcquisitionList">
+            <option disabled selected>-- Select Method of Acquisition --</option>
+        </select>
+        <span asp-validation-for="AcquisitionMethod" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Price</label>
+        <input asp-for="Price" type="number" class="form-control">
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Series Information</label>
+        <input asp-for="SeriesInformation" type="text" class="form-control">
+        <span asp-validation-for="SeriesInformation" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Keywords</label>
+        <input asp-for="Keywords" type="text" class="form-control">
+        <span asp-validation-for="Keywords" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+
+        <a asp-action="BookIndex" class="btn-primary btn form-control ">Back to List</a>
+    </div>
+    <div class="col-md-6">
+        <input type="submit" value="Create" class="btn btn-success form-control" />
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

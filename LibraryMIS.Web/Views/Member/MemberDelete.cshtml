@@ -1,0 +1,44 @@
+﻿@using LibraryMIS.FrontEnd.Web.Models;
+@using LibraryMIS.Web.Models.Dto;
+@model MemberDto
+<form asp-action="MemberDelete" class="row p-3 mt-3 g-3 border">
+    <h1 class="text-white text-center">Add Member</h1>
+    <input asp-for="Id" hidden />
+    <hr />
+    <div class="col-md-6">
+        <label class="form-label">Member ID</label>
+        <input asp-for="MemberId" disabled type="text" class="form-control" placeholder="Enter National ID">
+       
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">First Name</label>
+        <input asp-for="FirstName" disabled type="text" class="form-control">
+        
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Last Name</label>
+        <input asp-for="LastName" disabled type="text" class="form-control">
+       
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Date of Birth</label>
+        <input asp-for="DateOfBirth" disabled type="date" class="form-control">
+        
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Email</label>
+        <input asp-for="Email" disabled type="email" class="form-control">
+        
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Phone Number</label>
+        <input asp-for="PhoneNumber" disabled type="text" class="form-control">
+        
+    </div>
+    <div class="col-md-6">
+        <a asp-action="MemberIndex" class="btn-primary btn form-control ">Back to List</a>
+    </div>
+    <div class="col-md-6">
+        <input type="submit" value="Delete" class="btn btn-danger form-control" />
+    </div>
+</form>

@@ -1,0 +1,93 @@
+﻿@using LibraryMIS.FrontEnd.Web.Models;
+@model BookDto
+<form asp-action="BookDelete" class="row p-3 mt-3 g-3 border">
+    <h1 class="text-white text-center">Delete Book</h1>
+    <input asp-for="Id" hidden />
+    <hr />
+    <div class="col-md-6">
+        <label class="form-label">Title</label>
+        <input disabled asp-for="Title" type="text" class="form-control">
+        
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">ISBN</label>
+        <input disabled asp-for="ISBN" type="text" class="form-control">
+        
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Authors</label>
+        <input disabled asp-for="Authors" type="text" class="form-control">
+        
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Publisher</label>
+        <input disabled asp-for="Publisher" type="text" class="form-control">
+        
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Publication Datele</label>
+        <input disabled asp-for="PublicationDate" type="date" class="form-control">
+        
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Genre</label>
+        <input disabled asp-for="Genre" type="text" class="form-control">
+        
+    </div>
+    <div class="col-md-12">
+        <label class="form-label">Synopsis</label>
+        <textarea disabled asp-for="Synopsis" class="form-control">
+
+        </textarea>
+        
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Page Count</label>
+        <input disabled asp-for="PageCount" type="number" class="form-control">
+        
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Language</label>
+        <input disabled asp-for="Language" type="text" class="form-control">
+       
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Shelf Location</label>
+        <input disabled asp-for="ShelfLocation" type="text" class="form-control">
+        
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Condition</label>
+        <input disabled asp-for="Condition" type="text" class="form-control">
+        
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Acquisition Method</label>
+        <select disabled asp-for="AcquisitionMethod" class="form-select" asp-items="@ViewBag.AcquisitionList">
+            <option disabled selected>-- Select Method of Acquisition --</option>
+        </select>
+        
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Price</label>
+        <input asp-for="Price" disabled type="number" class="form-control">
+        
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Series Information</label>
+        <input asp-for="SeriesInformation" disabled type="text" class="form-control">
+       
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Keywords</label>
+        <input asp-for="Keywords" disabled type="text" class="form-control">
+        
+    </div>
+    <div class="col-md-6">
+
+        <a asp-action="BookIndex" class="btn-primary btn form-control ">Back to List</a>
+    </div>
+    <div class="col-md-6">
+        <input type="submit" value="Delete" class="btn btn-danger form-control" />
+    </div>
+</form>

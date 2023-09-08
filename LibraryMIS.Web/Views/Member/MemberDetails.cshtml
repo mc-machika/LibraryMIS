@@ -1,0 +1,16 @@
+﻿@using LibraryMIS.Web.Models.Dto;
+@model MemberDto
+
+<div class="card">
+    <div class="card-header">
+        @Model.FirstName @Model.LastName
+    </div>
+    <div class="card-body">
+        <p class="card-text">Date of Birth: @Model.DateOfBirth</p>
+        <p class="card-text">Email: @Model.Email</p>
+        <p class="card-text">Phone Number: @Model.PhoneNumber</p>
+        <p class="card-text">Member ID: @Model.MemberId</p>
+        <a asp-action="MemberIndex" class="btn-primary btn form-control ">Back to List</a>
+    </div>
+</div>
+

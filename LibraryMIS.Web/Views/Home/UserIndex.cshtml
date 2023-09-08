@@ -1,0 +1,74 @@
+﻿@using LibraryMIS.FrontEnd.Web.Models;
+@model IEnumerable<UserDto>
+
+<div class="card shadow border-0 mt-4">
+	<div class="card-header bg-secondary bg-gradient ml-0 py-3">
+		<div class="row">
+			<div class="col-12 text-center">
+				<h1 class="text-white">Books List</h1>
+			</div>
+		</div>
+	</div>
+	<div class="card-body p-4">
+		<div class="row pb-3">
+			<div class="col-6">
+			</div>
+			<div class="col-6 text-end">
+				<a class="btn btn-outline-primary" asp-action="BookCreate"><i class="bi bi-plus-square"></i> Create New Book</a>
+
+			</div>
+		</div>
+		<table class="table table-bordered" id="bookList">
+			<thead>
+				<tr>
+					<th>
+						Name
+					</th>
+					<th>
+						Email
+					</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach (var item in Model)
+				{
+					<tr>
+						<td>
+							@item.Name
+						</td>
+						<td>
+							@item.Email
+						</td>
+						<td>
+							<a asp-action="BookEdit" asp-route-bookId="@item.Id" class="">
+								<i class="bi bi-pencil-square"></i>
+							</a>
+							<a asp-action="BookDelete" asp-route-bookId="@item.Id" class="">
+								<i class="bi bi-trash"></i>
+							</a>
+							<a asp-action="BookDetails" asp-route-bookId="@item.Id" class="">
+								<i class="bi bi-eye"></i>
+							</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+
+	</div>
+
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>@*
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> *@
+<link href="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.css" rel="stylesheet">
+<script src="https://cdn.datatables.net/v/dt/dt-1.13.6/datatables.min.js"></script>
+
+<script type="text/javascript">
+	var js = jQuery.noConflict(true);
+	js(document).ready(function () {
+		js('#bookList').DataTable({
+
+		});
+	});
+</script>

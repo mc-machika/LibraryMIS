@@ -1,0 +1,48 @@
+﻿@using LibraryMIS.FrontEnd.Web.Models;
+@using LibraryMIS.Web.Models.Dto;
+@model MemberDto
+<form asp-action="MemberCreate" class="row p-3 mt-3 g-3 border">
+    <h1 class="text-white text-center">Add Member</h1>
+    <hr />
+    <div class="col-md-6">
+        <label class="form-label">Member ID</label>
+        <input asp-for="MemberId" type="text" class="form-control" placeholder="Enter National ID">
+        <span asp-validation-for="MemberId" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">First Name</label>
+        <input asp-for="FirstName" type="text" class="form-control">
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Last Name</label>
+        <input asp-for="LastName" type="text" class="form-control">
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Date of Birth</label>
+        <input asp-for="DateOfBirth" type="date" class="form-control">
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Email</label>
+        <input asp-for="Email" type="email" class="form-control">
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Phone Number</label>
+        <input asp-for="PhoneNumber" type="number" class="form-control">
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+
+        <a asp-action="MemberIndex" class="btn-primary btn form-control ">Back to List</a>
+    </div>
+    <div class="col-md-6">
+        <input type="submit" value="Create" class="btn btn-success form-control" />
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
